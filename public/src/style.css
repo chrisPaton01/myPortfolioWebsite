@@ -65,6 +65,16 @@ header h1 {
   color: #ffde59;
 }
 
+.click-me {
+  color: #d52eff;               /* default text colour when not hovered color */
+  transition: color 0.3s ease;
+}
+
+/* when the parent .card is hovered, change .click-me text colour */
+.card:hover .click-me {
+  color: #0fff50;              /* green on card hover */
+}
+
 nav a {
   color: #fff;
   margin: 0 1rem;
