@@ -9,15 +9,22 @@ body {
   font-family: 'Press Start 2P', cursive;
   line-height: 1.5;
   color: #fff;
-  background: linear-gradient(135deg, #766676, #a65d63, #5c7599, #57a282);
-  background-size: 400% 400%;
-  animation: gradientShift 20s ease infinite;
+
+  /* Polka dots + gradient */
+  background:
+    radial-gradient(circle, rgba(255,255,255,0.12) 2.75px, transparent 2.75px), /* dots slightly bigger & more opaque, pixel values are dot sizings */
+    linear-gradient(135deg, #766676, #a65d63, #5c7599, #57a282);
+
+  background-size: 50px 50px, 400% 400%; /* spacing dots + gradient scale */
+  background-repeat: repeat, no-repeat;
+
+  animation: dotsAndGradient 20s linear infinite;
 }
 
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+@keyframes dotsAndGradient {
+  0%   { background-position: 0 0, 0 0; }
+  50%  { background-position: 100px 100px, 100% 100%; } /* move dots diagonally subtly */
+  100% { background-position: 0 0, 0 0; }
 }
 
 /* Header */
