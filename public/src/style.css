@@ -11,7 +11,7 @@ body {
   color: #fff;
   background: linear-gradient(135deg, #766676, #a65d63, #5c7599, #57a282);
   background-size: 400% 400%;
-  animation: gradientShift 35s ease infinite;
+  animation: gradientShift 20s ease infinite;
 }
 
 @keyframes gradientShift {
@@ -93,6 +93,13 @@ section {
   margin: auto;
 }
 
+section h2 {
+  display: block;          /* make sure it behaves like a block */
+  margin: 0 auto 2rem auto; /* center horizontally */
+  text-align: center;       /* center text inside */
+  width: fit-content;       /* shrink box to content so it centers nicely */
+}
+
 .orange-blender-title-text {
   background: #f39c5c;   /* orange */
   color: #fff;           /* text color for contrast */
@@ -129,6 +136,7 @@ h2 {
   display: inline-block;
   padding: 0.5rem 1rem;
   border-radius: 8px;
+  text-align: center;
 }
 
 /* UX section h2 heading colouring */
