@@ -1,262 +1,366 @@
 /* General Site Reset */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'Press Start 2P', cursive;
-  line-height: 1.5;
-  color: #fff;
+    font-family: 'Press Start 2P', cursive;
+    line-height: 1.5;
+    color: #fff;
 
-  /* Polka dots + gradient */
-  background:
-    radial-gradient(circle, rgba(255,255,255,0.12) 2.75px, transparent 2.75px), /* dots slightly bigger & more opaque, pixel values are dot sizings */
-    linear-gradient(135deg, #766676, #a65d63, #5c7599, #57a282);
+    /* Polka dots + gradient */
+    background:
+        radial-gradient(circle, rgba(255, 255, 255, 0.12) 2.75px, transparent 2.75px),
+        /* dots slightly bigger & more opaque, pixel values are dot sizings */
+        linear-gradient(135deg, #766676, #a65d63, #5c7599, #57a282);
 
-  background-size: 50px 50px, 400% 400%; /* spacing dots + gradient scale */
-  background-repeat: repeat, no-repeat;
+    background-size: 50px 50px, 400% 400%;
+    /* spacing dots + gradient scale */
+    background-repeat: repeat, no-repeat;
 
-  animation: dotsAndGradient 20s linear infinite;
+    animation: dotsAndGradient 20s linear infinite;
 }
 
 @keyframes dotsAndGradient {
-  0%   { background-position: 0 0, 0 0; }
-  50%  { background-position: 100px 100px, 100% 100%; } /* move dots diagonally subtly */
-  100% { background-position: 0 0, 0 0; }
+    0% {
+        background-position: 0 0, 0 0;
+    }
+
+    50% {
+        background-position: 100px 100px, 100% 100%;
+    }
+
+    /* move dots diagonally subtly */
+    100% {
+        background-position: 0 0, 0 0;
+    }
 }
 
 /* Header */
 header {
-  background: #222;
-  padding: 2rem 1rem;
-  text-align: center;
-  border-bottom: 4px solid #ffde59;
+    background: #34495e;
+    /* brighter navy-grey, changed from #222 */
+    padding: 2rem 1rem;
+    text-align: center;
+    /* border-bottom: 4px solid #34495e;*/
+    border-bottom: #34495e;
+    /* gradient colour change at an angle 4px linear-gradient(135deg, #34495e, #2c3e50); */
 }
 
+/* Hero Section */
+.hero {
+    background: #34495e;
+    color: #ffde59;
+    text-align: center;
+    border-bottom: 2.5px solid #ffde59;
+}
+
+/* Logo container centering */
 header .logo-container {
-  display: flex;
-  justify-content: center; /* centers horizontally */
-  margin-top: 1rem;       /* space between title and logo */
+    display: flex;
+    justify-content: center;
+    /* horizontal centering */
+    align-items: center;
+    /* vertical centering if needed */
+    margin-top: 1rem;
+    /* spacing from header title */
+}
+
+/* Smooth, subtle logo wiggle + consistent scale */
+@keyframes logoWiggleScale {
+    0% {
+        transform: scale(1.15) rotate(0deg);
+    }
+
+    20% {
+        transform: scale(1.15) rotate(2deg);
+    }
+
+    40% {
+        transform: scale(1.15) rotate(-2deg);
+    }
+
+    60% {
+        transform: scale(1.15) rotate(1deg);
+    }
+
+    80% {
+        transform: scale(1.15) rotate(-1deg);
+    }
+
+    100% {
+        transform: scale(1.15) rotate(0deg);
+    }
 }
 
 header .logo {
-  max-width: 95px;        /* adjust as needed */
-  height: auto;
-  display: block;
+    max-width: 95px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    /* ensures centering inside flex */
+    transition: transform 0.3s ease-in-out;
+    /* smooth scale if animation stops */
+}
+
+header .logo:hover {
+    animation: logoWiggleScale 0.8s ease-in-out infinite;
 }
 
 header nav {
-  margin-top: 2rem;  /* adds space between logo and nav */
-  text-align: center;       /* center links under logo */
+    margin-top: 2rem;
+    /* adds space between logo and nav */
+    text-align: center;
+    /* center links under logo */
 }
 
 .header-link {
-  color: #ffde59; /* yellow text colour like header text */
-  /* font-weight: bold; */
-  text-decoration: underline;
-  display: inline-block;
-  transition: transform 0.3s ease, color 0.3s ease;
-  font-size: 1.2rem;
+    color: #ffde59;
+    /* yellow text colour like header text */
+    /* font-weight: bold; */
+    text-decoration: underline;
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+    font-size: 1.2rem;
 }
 
 .header-link:hover {
-  color: #f0909f; /* link hover effect like footer hover */
-  transform: scale(1.1);
+    color: #FF738C;
+    /* link hover effect like footer hover */
+    transform: scale(1.1);
 }
 
 header h1 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  color: #ffde59;
+    font-size: 1.7rem;
+    /* increased from 1.2rem to 2rem */
+    margin-bottom: 1rem;
+    color: #ffde59;
+    text-align: center;
+    /* ensures it stays centered */
 }
 
 .click-me {
-  color: #d52eff;               /* default text colour when not hovered color */
-  transition: color 0.3s ease;
+    color: #d52eff;
+    /* default text colour when not hovered color */
+    transition: color 0.3s ease;
 }
 
 /* when the parent .card is hovered, change .click-me text colour */
 .card:hover .click-me {
-  color: #0fff50;              /* green on card hover */
+    color: #0fff50;
+    /* green on card hover */
 }
 
 nav a {
-  color: #fff;
-  margin: 0 1rem;
-  text-decoration: none;
-  transition: color 0.3s ease;
+    color: #fff;
+    margin: 0 1rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
-  color: #ffde59;
+    color: #ffde59;
 }
 
 /* Sections */
 section {
-  padding: 3rem 1.5rem;
-  max-width: 1200px;
-  margin: auto;
+    padding: 3rem 1.5rem;
+    max-width: 1200px;
+    margin: auto;
 }
 
 section h2 {
-  display: block;          /* make sure it behaves like a block */
-  margin: 0 auto 2rem auto; /* center horizontally */
-  text-align: center;       /* center text inside */
-  width: fit-content;       /* shrink box to content so it centers nicely */
+    display: block;
+    /* make sure it behaves like a block */
+    margin: 0 auto 2rem auto;
+    /* center horizontally */
+    text-align: center;
+    /* center text inside */
+    width: fit-content;
+    /* shrink box to content so it centers nicely */
 }
 
 .orange-blender-title-text {
-  background: #f39c5c;   /* orange */
-  color: #fff;           /* text color for contrast */
-  padding: 0.5rem 1rem;
-  border-radius: 8px 0 0 8px; /* optional: rounded left side */
+    background: #f39c5c;
+    /* orange */
+    color: #fff;
+    /* text color for contrast */
+    padding: 0.5rem 1rem;
+    border-radius: 8px 0 0 8px;
+    /* optional: rounded left side */
 }
 
 .purple-ue5-title-text {
-  background: #b18cd9;   /* pale purple */
-  color: #fff;           /* text color for contrast */
-  padding: 0.5rem 1rem;
-  border-radius: 0 8px 8px 0; /* optional: rounded right side */
+    background: #b18cd9;
+    /* pale purple */
+    color: #fff;
+    /* text color for contrast */
+    padding: 0.5rem 1rem;
+    border-radius: 0 8px 8px 0;
+    /* optional: rounded right side */
 }
 
 /* UX section cards hover: blue */
 #ux .card:hover {
-  background: #5dade2;  /* blue card hover colour */
-  color: #fff;          /* text color for contrast */
+    background: #5dade2;
+    /* blue card hover colour */
+    color: #fff;
+    /* text color for contrast */
 }
 
 /* Blender section cards hover: orange */
 #blender .card:hover {
-  background: #f39c5c;  /* orange card hover colour */
-  color: #fff;          /* text color for contrast */
+    background: #f39c5c;
+    /* orange card hover colour */
+    color: #fff;
+    /* text color for contrast */
 }
 
 /* Global h2 colour and formatting */
 h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-  font-size: 1rem;
-  color: #222;
-  background: #ffde59;
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  text-align: center;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    color: #222;
+    background: #ffde59;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    text-align: center;
 }
 
 /* UX section h2 heading colouring */
 #ux h2 {
-  background: #5dade2;   /* blue */
-  color: #fff;
+    background: #5dade2;
+    /* blue */
+    color: #fff;
 }
 
 /* Blender section h2 heading colouring */
 #blender h2 {
-  background: #f39c5c;   /* orange */
+    background: #f39c5c;
+    /* orange */
 }
 
 /* Grid */
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
 }
 
 /* Cards */
 .card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 1rem;
-  color: #222;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: transform 0.2s ease, background 0.3s ease;
+    background: #fff;
+    border-radius: 12px;
+    padding: 1rem;
+    color: #222;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, background 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  background: #ffde59;
-  color: #000;
+    transform: translateY(-5px);
+    background: #ffde59;
+    color: #000;
 }
 
-.card img, .card video {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 1rem;
+.card img,
+.card video {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
 }
 
 .card-link {
-  display: block;
-  text-decoration: none;
-  color: inherit; /* keeps the text color from .card */
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    /* keeps the text color from .card */
 }
 
 .card-link:hover {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 /* Highlight only the contact text */
 .contact-text {
-  background-color: #111;   /* Dark backdrop */
-  padding: 1rem 2rem;
-  border-radius: 6px;
-  display: inline-block;
-  transition: transform 0.3s ease, color 0.3s ease;
+    background-color: #2e2d2d;
+    /* Dark backdrop */
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .contact-text a {
-  color: #ffde59;
-  text-decoration: underline;
-  display: inline-block;
-  transition: transform 0.3s ease, color 0.3s ease;
+    color: #ffde59;
+    text-decoration: underline;
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .contact-text a:hover {
-  color: #f0909f;
+    color: #FF738C;
 }
 
 .contact-text:hover {
-  transform: scale(1.1); 
+    transform: scale(1.1);
 }
 
 .single-card-row {
-  display: grid;
-  justify-content: center; /* centers the single card */
-  margin-top: 2rem;        /* spacing above the row */
+    display: grid;
+    justify-content: center;
+    /* centers the single card */
+    margin-top: 2rem;
+    /* spacing above the row */
 }
 
 .single-card-row .card {
-  /* max-width: 400px;          optional: limits width  */
-  display: grid;
-  justify-content: center;   /* centres the card */
-  border-radius: 8px;       /* optional rounded corners */
+    /* max-width: 400px;          optional: limits width  */
+    display: grid;
+    justify-content: center;
+    /* centres the card */
+    border-radius: 8px;
+    /* optional rounded corners */
 }
 
 /* UE5 row card hover colour */
 .single-card-row .card:hover {
-  background: #b18cd9 !important;  /* the  !important; code ensures the global orange colour hover doesnt overwrite the purple hover colour set here */
-  color: #fff;           /* ensure text is readable */
+    background: #b18cd9 !important;
+    /* the  !important; code ensures the global orange colour hover doesnt overwrite the purple hover colour set here */
+    color: #fff;
+    /* ensure text is readable */
 }
 
 /* Footer */
 footer {
-  background: #222;
-  color: #ffde59;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 3rem;
+    background: #34495e;
+    /* brighter navy-grey, changed from #222 */
+    color: #ffde59;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 3rem;
+    flex-shrink: 0;
+    /* prevents footer from moving up when content is short */
 }
 
 /* Footer name link hover effect */
 .footer-name-link {
-  color: #ffde59;           /* match footer color */
-  text-decoration: underline;     /* remove underline */
-  display: inline-block;     /* needed for transform to work */
-  transition: transform 0.3s ease, color 0.3s ease;
+    color: #ffde59;
+    /* match footer color */
+    text-decoration: underline;
+    /* remove underline */
+    display: inline-block;
+    /* needed for transform to work */
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .footer-name-link:hover {
-  transform: scale(1.1);    /* slightly enlarge text */
-  color: #f0909f;              /* optional: change color on hover */
+    transform: scale(1.1);
+    /* slightly enlarge text */
+    color: #FF738C;
+    /* optional: change color on hover */
 }
