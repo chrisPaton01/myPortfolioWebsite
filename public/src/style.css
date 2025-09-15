@@ -140,7 +140,7 @@ header h1 {
 }
 
 .click-me {
-	color: #d52eff;
+	color: #dd3131;
 	/* default text colour when not hovered color */
 	transition: color 0.3s ease;
 }
@@ -362,3 +362,4 @@ footer {
 	color: #FF738C;
 	/* optional: change color on hover */
 }
+
