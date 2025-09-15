@@ -10,17 +10,15 @@ body {
     line-height: 1.5;
     color: #fff;
 
-    /* Polka dots + gradient */
+    /* Polka dots + white-grey gradient */
     background:
-        radial-gradient(circle, rgba(255, 255, 255, 0.12) 2.75px, transparent 2.75px),
-        /* dots slightly bigger & more opaque, pixel values are dot sizings */
-        linear-gradient(135deg, #766676, #a65d63, #5c7599, #57a282);
+        radial-gradient(circle, rgba(255, 255, 255, 0.8) 2.75px, transparent 2.75px),
+        linear-gradient(135deg, #cccccc, #cccaac);
 
     background-size: 50px 50px, 400% 400%;
-    /* spacing dots + gradient scale */
     background-repeat: repeat, no-repeat;
 
-    animation: dotsAndGradient 20s linear infinite;
+    animation: dotsAndGradient 17s linear infinite;
 }
 
 @keyframes dotsAndGradient {
@@ -287,7 +285,7 @@ h2 {
 
 /* Highlight only the contact text */
 .contact-text {
-    background-color: #2e2d2d;
+    background-color: #34495e;
     /* Dark backdrop */
     padding: 1rem 2rem;
     border-radius: 6px;
@@ -303,7 +301,7 @@ h2 {
 }
 
 .contact-text a:hover {
-    color: #FF738C;
+    color: #34495e;
 }
 
 .contact-text:hover {
