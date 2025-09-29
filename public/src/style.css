@@ -9,7 +9,7 @@ body {
 	font-family: 'Press Start 2P', cursive;
 	line-height: 1.5;
 	color: #fff;
-	background: linear-gradient(0deg, #34495e, #34495e, #b8b08f, #b8b08f);
+	background: linear-gradient(0deg, #34495e, #34495e, #34495e, #cccbb7, #cccbb7, #cccbb7);
 	
 	/* COMMENTED OUT BACKGROUND CSS ANIMATION
 	 Polka dots + white-grey gradient
@@ -366,3 +366,4 @@ footer {
 	color: #FF738C;
 	/* optional: change color on hover */
 }
+
