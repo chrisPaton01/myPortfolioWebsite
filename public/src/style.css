@@ -9,7 +9,7 @@ body {
 	font-family: 'Press Start 2P', cursive;
 	line-height: 1.5;
 	color: #fff;
-	background: linear-gradient(180deg, #34495e, #f59089);
+	background: linear-gradient(0deg, #34495e, #34495e, #b8b08f, #b8b08f);
 	
 	/* COMMENTED OUT BACKGROUND CSS ANIMATION
 	 Polka dots + white-grey gradient
@@ -289,7 +289,7 @@ h2 {
 
 /* Highlight only the contact text */
 .contact-text {
-	background-color: #34495e;
+	background-color: black;
 	/* Dark backdrop */
 	padding: 1rem 2rem;
 	border-radius: 6px;
@@ -339,7 +339,7 @@ h2 {
 
 /* Footer */
 footer {
-	background: #34495e;
+	background: black;
 	/* brighter navy-grey, changed from #222 */
 	color: #ffde59;
 	text-align: center;
