@@ -9,8 +9,10 @@ body {
 	font-family: 'Press Start 2P', cursive;
 	line-height: 1.5;
 	color: #fff;
-
-	/* Polka dots + white-grey gradient */
+	background: linear-gradient(180deg, #34495e, #f59089);
+	
+	/* COMMENTED OUT BACKGROUND CSS ANIMATION
+	 Polka dots + white-grey gradient
 	background:
 		radial-gradient(circle, rgba(255, 255, 255, 0.8) 2.75px, transparent 2.75px),
 		linear-gradient(135deg, #cccccc, #cccaac);
@@ -19,6 +21,8 @@ body {
 	background-repeat: repeat, no-repeat;
 
 	animation: dotsAndGradient 17s linear infinite;
+	
+	*/
 }
 
 @keyframes dotsAndGradient {
@@ -362,4 +366,3 @@ footer {
 	color: #FF738C;
 	/* optional: change color on hover */
 }
-
